@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" value="请您输入内容"/>
+</body>
+<script>
+    //获取相关元素
+    var aInp=document.getElementsByTagName('input')[0];
+    //当获得焦点时
+    aInp.onfocus= function () {
+        //如果内容为"请您输入内容"则清空
+        if(this.value=="请您输入内容"){
+            this.value='';
+        }
+    };
+    //当失去焦点时
+    aInp.onblur= function () {
+        //如果内容为空.则"请您输入内容"
+        if(this.value==''){
+            this.value="请您输入内容";
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<input type="button" value="呜呜"/>
+<input type="button" value="呜呜"/>
+<input type="button" value="呜呜"/>
+<input type="button" value="呜呜"/>
+</body>
+
+<script>
+    //
+    var aInp = document.getElementsByTagName('input');
+    //
+    for (var i = 0; i < aInp.length; i++) {
+        aInp[i].onclick = function () {
+            for (var i = 0; i < aInp.length; i++) {
+                aInp[i].value = '呜呜';
+            }
+            this.value = '哈哈';
+
+        }
+
+
+    }
+
+
+</script>
+</html>

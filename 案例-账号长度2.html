@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input {
+            border: 0;
+            border: 1px solid #ccc;
+            width: 300px;
+            height: 30px;
+            margin: 10px;
+            /*获取插入条之后的蓝色外边框去除*/
+            outline-style: none;
+            padding-left: 10px;
+            font-size: 18px;
+        }
+
+        .wrong {
+            border: 1px solid red;
+        }
+
+        .wrong-span {
+            color: red;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .right {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+账号:<input type="text"><span></span><br>
+密码:<input type="text"><span></span>
+
+</body>
+<script type="text/javascript">
+    //获取相关元素
+    var aInp = document.getElementsByTagName('input')[0];
+    var aSpan = document.getElementsByTagName('span')[0];
+    //自动获取焦点
+    aInp.focus();
+    //当失去焦点时
+    aInp.onblur = function () {
+        //将当前内容存储
+        var str = this.value;
+        //如果当前内容为空，则弹出对话框
+        if (str == '') {
+            alert('请您输入账号');
+        }
+        //如果内容不为空
+        else {
+            //判断内容是否符合规则
+            //如果不符合规则
+            if (str.length < 6 || str.length > 20) {
+                aSpan.innerHTML = "对不起,您输入的内容不符合规则 应该在6-20个字符之间";
+                aSpan.className = 'wrong-span';
+                aInp.className = 'wrong';
+            } else {
+                aSpan.innerHTML = '输入正确';
+                aSpan.className = 'right';
+                aInp.className = '';
+            }
+        }
+    }
+</script>
+</html>

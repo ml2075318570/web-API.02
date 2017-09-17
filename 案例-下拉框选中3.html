@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="地址"/>
+<select name="" id="sel">
+    <option value="0">北京</option>
+    <option value="1">上海</option>
+    <option value="2">深圳</option>
+    <option value="3">杭州</option>
+    <option value="4">广州</option>
+    <option value="5">本地</option>
+</select>
+
+</body>
+<script>
+    //获取相关元素
+    var aInp = document.getElementsByTagName('input')[0];
+    var oSel = document.getElementById('sel');
+    var aOpt = document.getElementsByTagName('option');
+    //
+    aInp.onclick = function () {
+        oSel.value = '5';
+    }
+
+</script>
+</html>

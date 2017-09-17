@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .lei {
+            background-color: mediumvioletred;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>这是第1个li</li>
+    <li>这是第2个li</li>
+    <li>这是第3个li</li>
+    <li>这是第4个li</li>
+</ul>
+</body>
+<script>
+    //
+    var aLi = document.getElementsByTagName('li');
+
+    //
+    for (var i = 0; i < aLi.length; i++) {
+        aLi[i].onclick = function () {
+            this.className = 'lei';
+        }
+    }
+
+</script>
+</html>
